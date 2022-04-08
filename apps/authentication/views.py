@@ -1,5 +1,5 @@
 from .serializers import AuthSerializer
-from rest_framework import viewsets
+from rest_framework.viewsets import GenericViewSet
 from rest_framework.response import Response
 from rest_framework import status
 # Create your views here.
@@ -10,7 +10,7 @@ serializer class is to be converted to model instances to json or xml datatype
 """
 
 
-class RegisterView(viewsets.ViewSet):
+class RegisterView(GenericViewSet):
     serializer_class = AuthSerializer
 
     def create(self, request):
